@@ -22,17 +22,17 @@
     storageKey: 'ac_chatbot_history',
     logKey: 'ac_chatbot_logs',
     typingDelay: 600,
-    systemPrompt: `Tu es l'assistant virtuel d'Arthur Couffon, un créatif polyvalent spécialisé en 3D, Motion Design et DevOps/Cybersécurité. Tu es intégré à son portfolio.
+    systemPrompt: `Tu es l'assistant virtuel d'Arthur C., spécialisé en 3D, automatisation et IA. Tu es intégré à son portfolio.
 
 Contexte :
-- Compétences : Blender, Cinema 4D, After Effects, PowerShell, Python, OSINT, RGPD
-- Formation : ICAN (Institut de Création et Animation Numériques)
-- Projets notables : Atalante (bateau Ifremer, Bright Studio), Eclairion (bâtiment illuminé), Végétation (21 plantes animées), SEF, Animation Train (ICAN), Pub Fanta
-- Services : Modélisation 3D, Animation, Motion Design, Automatisation, Audit sécurité
-- Tarifs : TJM 350-550€ / Hourly $40-75
+- Compétences : Blender, création 3D, automatisation, IA, Python, PowerShell
+- Formation : ICAN Paris (Animation 3D), IUT Cachan, Paris Saclay
+- Expérience : SNCF (maquette 3D industrielle), Bright Studio (architecture 3D), AmpVisualTV
+- Services : Visuels 3D, Maquette 3D Industrielle, Automatisation & IA
+- Tarif : à partir de 400€/jour
 - Disponibilité : Freelance, disponible pour missions
 
-Réponds de façon concise, professionnelle et chaleureuse. Détecte la langue du visiteur (français ou anglais) et réponds dans la même langue. Si tu ne peux pas répondre, propose de laisser un email pour qu'Arthur recontacte le visiteur.`
+Réponds de façon concise et chaleureuse. Détecte la langue du visiteur (français ou anglais) et réponds dans la même langue. Parle en termes simples, pas de jargon technique. Si tu ne peux pas répondre, propose de laisser un email pour qu'Arthur recontacte le visiteur.`
   }, window.CHATBOT_CONFIG || {});
 
   // ── CSS injection ──────────────────────────────────────────────
@@ -236,28 +236,28 @@ Réponds de façon concise, professionnelle et chaleureuse. Détecte la langue d
   const KB = [
     {
       keys: ['compétence', 'competence', 'skill', 'savoir', 'expertise', 'technologie', 'tech', 'outil', 'tool', 'logiciel', 'software', 'stack'],
-      fr: "Arthur maîtrise un éventail de compétences :\n\n🎨 **3D & Motion Design** : Blender, Cinema 4D, After Effects\n🔧 **DevOps & Automatisation** : PowerShell, Python, scripting avancé\n🔒 **Cybersécurité** : OSINT, conformité RGPD, audit de sécurité\n\nUn profil rare qui allie créativité visuelle et expertise technique.",
-      en: "Arthur has a wide range of skills:\n\n🎨 **3D & Motion Design**: Blender, Cinema 4D, After Effects\n🔧 **DevOps & Automation**: PowerShell, Python, advanced scripting\n🔒 **Cybersecurity**: OSINT, GDPR compliance, security auditing\n\nA rare profile combining visual creativity with technical expertise."
+      fr: "Arthur maîtrise :\n\n🎨 **3D** : Blender — modélisation, animation, rendus réalistes\n⚙️ **Automatisation** : connecter vos outils, supprimer les tâches répétitives\n🤖 **IA** : assistants intelligents, traitement de données automatique\n\nUn profil qui allie créativité visuelle et expertise technique.",
+      en: "Arthur's skills:\n\n🎨 **3D**: Blender — modeling, animation, photorealistic renders\n⚙️ **Automation**: connecting your tools, removing repetitive tasks\n🤖 **AI**: intelligent assistants, automatic data processing\n\nA profile combining visual creativity with technical expertise."
     },
     {
       keys: ['projet', 'project', 'portfolio', 'réalisation', 'realisation', 'travail', 'work', 'réf', 'reference', 'exemple', 'example', 'show'],
-      fr: "Voici les projets phares d'Arthur :\n\n🚢 **Atalante** — Modélisation du navire océanographique de l'Ifremer pour Bright Studio\n🏛️ **Eclairion** — Bâtiment illuminé, rendu architectural\n🌿 **Végétation** — Collection de 21 plantes animées réalistes\n⚡ **SEF** — Projet pour Bright Studio\n🚂 **Animation Train** — Projet de fin d'études ICAN\n🥤 **Pub Fanta** — Publicité 3D motion design\n\nConsultez la section projets du portfolio pour les visuels !",
-      en: "Here are Arthur's key projects:\n\n🚢 **Atalante** — 3D model of Ifremer's research vessel for Bright Studio\n🏛️ **Eclairion** — Illuminated building, architectural rendering\n🌿 **Vegetation** — Collection of 21 realistic animated plants\n⚡ **SEF** — Project for Bright Studio\n🚂 **Train Animation** — ICAN graduation project\n🥤 **Fanta Ad** — 3D motion design commercial\n\nCheck the projects section for visuals!"
+      fr: "Voici les projets d'Arthur :\n\n🚂 **SNCF Bischheim** — Maquette 3D d'un centre de maintenance ferroviaire\n🏛️ **Bright Studio** — Images d'architecture pour l'immobilier\n🥤 **Pub Fanta** — Publicité 3D produit\n🎬 **NEOM** — Court-métrage sci-fi (projet école)\n📦 **Labello, Korai** — Visuels produits réalistes\n\nConsultez la section projets pour les visuels !",
+      en: "Arthur's projects:\n\n🚂 **SNCF Bischheim** — 3D model of a railway maintenance center\n🏛️ **Bright Studio** — Architectural images for real estate\n🥤 **Fanta Ad** — 3D product commercial\n🎬 **NEOM** — Sci-fi short film (school project)\n📦 **Labello, Korai** — Realistic product visuals\n\nCheck the projects section for visuals!"
     },
     {
       keys: ['tarif', 'prix', 'price', 'rate', 'coût', 'cout', 'cost', 'budget', 'devis', 'quote', 'tjm', 'hourly', 'jour', 'day'],
-      fr: "Les tarifs d'Arthur :\n\n📋 **TJM (Taux Journalier Moyen)** : 350 – 550 €\n⏱️ **Taux horaire** : 40 – 75 $\n\nLe tarif varie selon la complexité du projet, les délais et le volume. N'hésitez pas à décrire votre projet pour un devis personnalisé !",
-      en: "Arthur's rates:\n\n📋 **Daily rate**: €350 – €550\n⏱️ **Hourly rate**: $40 – $75\n\nRates vary based on project complexity, timeline, and volume. Feel free to describe your project for a custom quote!"
+      fr: "Les tarifs d'Arthur :\n\n📋 **Tarif jour** : à partir de 400 €\n\nLe prix dépend du projet, des délais et du volume. Le plus simple : décrivez votre besoin via la page Devis pour une estimation immédiate !",
+      en: "Arthur's rates:\n\n📋 **Daily rate**: from €400\n\nPricing depends on project scope, timeline, and volume. The easiest way: describe your needs on the Quote page for an instant estimate!"
     },
     {
       keys: ['service', 'offre', 'offer', 'prestation', 'mission', 'what do you do', 'que faites', 'proposer', 'propose'],
-      fr: "Arthur propose les services suivants :\n\n🎨 **Modélisation 3D** — Objets, personnages, environnements (Blender, Cinema 4D)\n🎬 **Animation & Motion Design** — Publicités, présentations, contenus animés\n⚙️ **Automatisation** — Scripts PowerShell/Python, pipelines, DevOps\n🔒 **Audit Sécurité** — OSINT, conformité RGPD, analyse de vulnérabilités\n\nChaque mission est adaptée à vos besoins spécifiques.",
-      en: "Arthur offers the following services:\n\n🎨 **3D Modeling** — Objects, characters, environments (Blender, Cinema 4D)\n🎬 **Animation & Motion Design** — Ads, presentations, animated content\n⚙️ **Automation** — PowerShell/Python scripts, pipelines, DevOps\n🔒 **Security Audit** — OSINT, GDPR compliance, vulnerability analysis\n\nEach project is tailored to your specific needs."
+      fr: "Arthur propose 3 services :\n\n🎨 **Visuels 3D** — Modélisation, animation, rendus réalistes (Blender)\n🏭 **Maquette 3D Industrielle** — Recréer vos sites en 3D pour planifier et former\n⚙️ **Automatisation & IA** — Connecter vos outils, supprimer le répétitif, assistants IA\n\nChaque mission est adaptée à vos besoins.",
+      en: "Arthur offers 3 services:\n\n🎨 **3D Visuals** — Modeling, animation, photorealistic renders (Blender)\n🏭 **3D Industrial Model** — Recreate your sites in 3D for planning and training\n⚙️ **Automation & AI** — Connect your tools, remove repetitive tasks, AI assistants\n\nEach project is tailored to your needs."
     },
     {
       keys: ['formation', 'étude', 'etude', 'education', 'école', 'ecole', 'school', 'diplôme', 'diplome', 'degree', 'ican', 'parcours', 'background'],
-      fr: "Arthur est diplômé de l'**ICAN** (Institut de Création et Animation Numériques), une école spécialisée dans les métiers du numérique créatif à Paris. Sa formation couvre la 3D, le motion design et les technologies numériques.",
-      en: "Arthur graduated from **ICAN** (Institut de Création et Animation Numériques), a school specializing in creative digital arts in Paris. His training covers 3D, motion design, and digital technologies."
+      fr: "Arthur est diplômé de l'**ICAN** à Paris (Animation 3D), avec aussi un DUT Génie Électrique (IUT Cachan) et une Licence Image & Son (Paris Saclay). Un parcours qui mélange technique et créativité.",
+      en: "Arthur graduated from **ICAN** in Paris (3D Animation), also holds a degree in Electrical Engineering (IUT Cachan) and Image & Sound (Paris Saclay). A background combining technical and creative skills."
     },
     {
       keys: ['contact', 'email', 'mail', 'joindre', 'reach', 'écrire', 'ecrire', 'write', 'message', 'appeler', 'call', 'rencontrer', 'meet'],
@@ -276,18 +276,18 @@ Réponds de façon concise, professionnelle et chaleureuse. Détecte la langue d
     },
     {
       keys: ['motion', 'animation', 'after effects', 'vidéo', 'video', 'pub', 'publicité', 'publicite', 'ad', 'commercial', 'fanta'],
-      fr: "En **motion design**, Arthur utilise After Effects et les outils 3D pour créer des animations percutantes : publicités (comme sa Pub Fanta), présentations dynamiques, contenus pour les réseaux sociaux et animations de produits.",
-      en: "In **motion design**, Arthur uses After Effects and 3D tools to create impactful animations: commercials (like his Fanta Ad), dynamic presentations, social media content, and product animations."
+      fr: "Arthur crée des **animations 3D** avec Blender : publicités produits (comme sa Pub Fanta), présentations, vidéos de présentation. Il a aussi de l'expérience en vidéo live (TV, Roland Garros).",
+      en: "Arthur creates **3D animations** with Blender: product commercials (like his Fanta Ad), presentations, showreels. He also has live video experience (TV, Roland Garros)."
     },
     {
       keys: ['sécurité', 'securite', 'security', 'cyber', 'osint', 'rgpd', 'gdpr', 'audit', 'hack', 'protection', 'données', 'donnees', 'data', 'privacy'],
-      fr: "Arthur possède une expertise en **cybersécurité** :\n\n🔍 **OSINT** — Recherche et analyse d'informations en sources ouvertes\n📋 **RGPD** — Mise en conformité, exercice des droits, audit data brokers\n🛡️ **Audit sécurité** — Analyse de vulnérabilités, hardening système\n\nUne compétence complémentaire précieuse pour tout projet numérique.",
-      en: "Arthur has expertise in **cybersecurity**:\n\n🔍 **OSINT** — Open-source intelligence research and analysis\n📋 **GDPR** — Compliance, rights enforcement, data broker auditing\n🛡️ **Security Audit** — Vulnerability analysis, system hardening\n\nA valuable complementary skill for any digital project."
+      fr: "Arthur sécurise les systèmes qu'il construit :\n\n🔒 **Protection des données** — conformité RGPD, vérification des failles\n🛡️ **Sécurité des systèmes** — protection des accès, surveillance automatique\n\nC'est intégré dans tous les projets d'automatisation qu'il livre.",
+      en: "Arthur secures the systems he builds:\n\n🔒 **Data protection** — GDPR compliance, vulnerability checks\n🛡️ **System security** — access protection, automatic monitoring\n\nIt's built into every automation project he delivers."
     },
     {
-      keys: ['python', 'powershell', 'script', 'automatisation', 'automation', 'devops', 'code', 'développement', 'developpement', 'dev', 'programming'],
-      fr: "Côté **DevOps & Automatisation**, Arthur développe des solutions en PowerShell et Python : pipelines d'automatisation, monitoring système, scripts de déploiement, APIs et outils sur mesure. Il combine cette expertise technique avec ses compétences créatives.",
-      en: "On the **DevOps & Automation** side, Arthur builds solutions in PowerShell and Python: automation pipelines, system monitoring, deployment scripts, APIs, and custom tools. He combines this technical expertise with his creative skills."
+      keys: ['python', 'powershell', 'script', 'automatisation', 'automation', 'code', 'développement', 'developpement', 'dev', 'programming', 'connecter', 'connect'],
+      fr: "Côté **automatisation**, Arthur connecte vos outils entre eux et supprime les tâches répétitives. Il utilise Python et PowerShell pour construire des systèmes qui tournent tout seuls — surveillance, réparation automatique, assistants IA.",
+      en: "On the **automation** side, Arthur connects your tools together and removes repetitive tasks. He uses Python and PowerShell to build systems that run on their own — monitoring, self-repair, AI assistants."
     },
     {
       keys: ['bonjour', 'hello', 'hi', 'hey', 'salut', 'coucou', 'bonsoir', 'yo', 'good morning', 'good evening'],
@@ -301,8 +301,8 @@ Réponds de façon concise, professionnelle et chaleureuse. Détecte la langue d
     },
     {
       keys: ['qui', 'who', 'arthur', 'présentation', 'presentation', 'about', 'profil', 'profile', 'toi', 'you'],
-      fr: "Arthur Couffon est un **créatif polyvalent** basé en France, diplômé de l'ICAN. Il combine une expertise en 3D/Motion Design (Blender, Cinema 4D, After Effects) avec des compétences techniques en DevOps (PowerShell, Python) et cybersécurité (OSINT, RGPD). Il travaille en freelance et a collaboré avec des studios comme Bright Studio.",
-      en: "Arthur Couffon is a **versatile creative** based in France, graduated from ICAN. He combines expertise in 3D/Motion Design (Blender, Cinema 4D, After Effects) with technical skills in DevOps (PowerShell, Python) and cybersecurity (OSINT, GDPR). He works as a freelancer and has collaborated with studios like Bright Studio."
+      fr: "Arthur C. crée des **visuels 3D** et construit des **systèmes automatisés** qui travaillent tout seuls. Basé en France, il a travaillé pour la SNCF (maquette 3D industrielle) et Bright Studio (architecture 3D). En freelance, il propose 3D, automatisation et IA.",
+      en: "Arthur C. creates **3D visuals** and builds **automated systems** that work on their own. Based in France, he's worked for SNCF (industrial 3D model) and Bright Studio (architectural 3D). As a freelancer, he offers 3D, automation, and AI."
     },
     {
       keys: ['atalante', 'ifremer', 'bateau', 'navire', 'ship', 'boat', 'bright'],
