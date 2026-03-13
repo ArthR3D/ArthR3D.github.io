@@ -127,7 +127,7 @@
         .to('.hero-badge', { opacity: 1, y: 0, duration: 0.5 }, '-=0.3')
         .to('.hero-title', { opacity: 1, y: 0, duration: 0.7 }, '-=0.3')
         .to('.hero-sub', { opacity: 1, y: 0, duration: 0.5 }, '-=0.3')
-        .to('.hero-stats', { opacity: 1, y: 0, duration: 0.5 }, '-=0.2')
+        .to('.hero-stats', { opacity: 1, y: 0, duration: 0.5, onComplete: animateHeroCounters }, '-=0.2')
         .to('.hero-cta', { opacity: 1, y: 0, duration: 0.5 }, '-=0.2');
     } else {
       ['.hero-content', '.hero-badge', '.hero-title', '.hero-sub', '.hero-stats', '.hero-cta'].forEach(function (sel, i) {
@@ -136,6 +136,9 @@
           setTimeout(function () {
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             el.style.opacity = '1'; el.style.transform = 'translateY(0)';
+            if (sel === '.hero-stats') {
+              setTimeout(animateHeroCounters, 300);
+            }
           }, i * 150);
         }
       });
@@ -213,18 +216,30 @@
   /* ==============================
      8. COUNTER ANIMATION
      ============================== */
+  var counterObserved = new Set();
+
   function initCounters() {
     var counters = document.querySelectorAll('.counter');
-    var observed = new Set();
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting && !observed.has(entry.target)) {
-          observed.add(entry.target);
+        if (entry.isIntersecting && !counterObserved.has(entry.target)) {
+          // Skip counters inside hero-stats — they are triggered by the hero timeline
+          if (entry.target.closest('.hero-stats')) return;
+          counterObserved.add(entry.target);
           animateCounter(entry.target);
         }
       });
     }, { threshold: 0.5 });
     counters.forEach(function (c) { observer.observe(c); });
+  }
+
+  function animateHeroCounters() {
+    document.querySelectorAll('.hero-stats .counter').forEach(function (el) {
+      if (!counterObserved.has(el)) {
+        counterObserved.add(el);
+        animateCounter(el);
+      }
+    });
   }
 
   function animateCounter(el) {
@@ -297,6 +312,7 @@
         el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
       });
       toggles.forEach(function (btn) { btn.textContent = lang === 'fr' ? 'EN' : 'FR'; });
+      document.title = lang === 'fr' ? 'Arthur C. | 3D, IA & Automatisation' : 'Arthur C. | 3D, AI & Automation';
     }
 
     // Apply saved language on load

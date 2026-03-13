@@ -415,10 +415,13 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">AC<span class="accent">.</span></a>
-      <a href="index.html" class="nav-back">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-        Retour au portfolio
-      </a>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <a href="index.html" class="nav-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+          <span data-fr="Retour au portfolio" data-en="Back to portfolio">Retour au portfolio</span>
+        </a>
+        <button id="langToggleDevis" style="background:transparent;border:1px solid var(--border-dim);color:var(--text-dim);padding:6px 12px;border-radius:var(--radius);font-family:var(--font);font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--text)'" onmouseout="this.style.borderColor='var(--border-dim)';this.style.color='var(--text-dim)'">EN</button>
+      </div>
     </div>
   </nav>
 
@@ -428,8 +431,8 @@
   </div>
 
   <div class="main">
-    <h1 class="page-title">Mon devis gratuit</h1>
-    <p class="page-subtitle">D&eacute;crivez votre projet en quelques clics. Estimation imm&eacute;diate, r&eacute;ponse sous 24h.</p>
+    <h1 class="page-title" data-fr="Mon devis gratuit" data-en="Free quote">Mon devis gratuit</h1>
+    <p class="page-subtitle" data-fr="Décrivez votre projet en quelques clics. Estimation immédiate, réponse sous 24h." data-en="Describe your project in a few clicks. Instant estimate, reply within 24h.">D&eacute;crivez votre projet en quelques clics. Estimation imm&eacute;diate, r&eacute;ponse sous 24h.</p>
 
     <div class="progress-bar" id="progressBar">
       <div class="progress-step active" data-step="1">1</div>
@@ -447,7 +450,7 @@
 
       <!-- Step 1: Type de projet -->
       <div class="step active" data-step="1">
-        <h3 class="step-title">De quoi avez-vous besoin ?</h3>
+        <h3 class="step-title" data-fr="De quoi avez-vous besoin ?" data-en="What do you need?">De quoi avez-vous besoin ?</h3>
         <div class="options-grid cols-3" id="typeOptions">
           <div class="option-card" data-value="3d" onclick="selectType(this)">
             <span class="option-icon">&#9670;</span>
@@ -479,8 +482,8 @@
 
       <!-- Step 2: Details -->
       <div class="step" data-step="2">
-        <h3 class="step-title">Pr&eacute;cisez votre besoin</h3>
-        <p style="text-align:center;color:var(--text-dim);font-size:0.85rem;margin-bottom:20px;">S&eacute;lectionnez une ou plusieurs options</p>
+        <h3 class="step-title" data-fr="Précisez votre besoin" data-en="Specify your needs">Pr&eacute;cisez votre besoin</h3>
+        <p style="text-align:center;color:var(--text-dim);font-size:0.85rem;margin-bottom:20px;" data-fr="Sélectionnez une ou plusieurs options" data-en="Select one or more options">S&eacute;lectionnez une ou plusieurs options</p>
         <div class="options-grid cols-2" id="detailOptions"></div>
         <div class="step-nav">
           <button class="btn btn-ghost" onclick="goToStep(1)">
@@ -496,7 +499,7 @@
 
       <!-- Step 3: Taille du projet -->
       <div class="step" data-step="3">
-        <h3 class="step-title">Quelle taille de projet ?</h3>
+        <h3 class="step-title" data-fr="Quelle taille de projet ?" data-en="How big is your project?">Quelle taille de projet ?</h3>
         <div class="options-grid cols-2" id="complexityOptions">
           <div class="option-card" data-value="petit" data-mult="1" onclick="selectSingle(this, 'complexity')">
             <span class="option-icon">&#9679;</span>
@@ -537,7 +540,7 @@
 
       <!-- Step 4: D&eacute;lai -->
       <div class="step" data-step="4">
-        <h3 class="step-title">Pour quand ?</h3>
+        <h3 class="step-title" data-fr="Pour quand ?" data-en="When do you need it?">Pour quand ?</h3>
         <div class="options-grid cols-2" id="deadlineOptions">
           <div class="option-card" data-value="1sem" data-mult="1.5" onclick="selectSingle(this, 'deadline')">
             <span class="option-icon">&#9889;</span>
@@ -581,12 +584,12 @@
 
       <!-- Step 5: Contact + recap -->
       <div class="step" data-step="5">
-        <h3 class="step-title">Vos coordonn&eacute;es</h3>
+        <h3 class="step-title" data-fr="Vos coordonnées" data-en="Your details">Vos coordonn&eacute;es</h3>
 
         <div class="form-row">
           <div class="form-group">
-            <label>Nom complet <span class="required">*</span></label>
-            <input type="text" id="clientName" placeholder="Jean Dupont" required>
+            <label><span data-fr="Nom complet" data-en="Full name">Nom complet</span> <span class="required">*</span></label>
+            <input type="text" id="clientName" placeholder="Jean Dupont" data-fr-placeholder="Jean Dupont" data-en-placeholder="John Smith" required>
           </div>
           <div class="form-group">
             <label>Email <span class="required">*</span></label>
@@ -595,17 +598,17 @@
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>Entreprise</label>
-            <input type="text" id="clientCompany" placeholder="Optionnel">
+            <label data-fr="Entreprise" data-en="Company">Entreprise</label>
+            <input type="text" id="clientCompany" placeholder="Optionnel" data-fr-placeholder="Optionnel" data-en-placeholder="Optional">
           </div>
           <div class="form-group">
-            <label>T&eacute;l&eacute;phone</label>
-            <input type="tel" id="clientPhone" placeholder="Optionnel">
+            <label data-fr="Téléphone" data-en="Phone">T&eacute;l&eacute;phone</label>
+            <input type="tel" id="clientPhone" placeholder="Optionnel" data-fr-placeholder="Optionnel" data-en-placeholder="Optional">
           </div>
         </div>
         <div class="form-group">
-          <label>Dites-moi en quelques mots ce que vous cherchez</label>
-          <textarea id="clientMessage" placeholder="D&eacute;crivez votre projet, vos attentes, des exemples de ce qui vous pla&icirc;t..."></textarea>
+          <label data-fr="Dites-moi en quelques mots ce que vous cherchez" data-en="Tell me briefly what you're looking for">Dites-moi en quelques mots ce que vous cherchez</label>
+          <textarea id="clientMessage" placeholder="Décrivez votre projet, vos attentes, des exemples de ce qui vous plaît..." data-fr-placeholder="Décrivez votre projet, vos attentes, des exemples de ce qui vous plaît..." data-en-placeholder="Describe your project, expectations, examples of what you like..."></textarea>
         </div>
 
         <div class="recap" id="recapBlock"></div>
@@ -1022,6 +1025,202 @@
       clearTimeout(toast._timer);
       toast._timer = setTimeout(function() { toast.classList.remove('show'); }, 3500);
     }
+
+    // ===================== LANGUAGE TOGGLE =====================
+    var LANG_EN = {
+      TYPE_LABELS: { '3d': '3D Visuals', 'industrie': '3D Industrial Model', 'auto': 'Automation & AI' },
+      COMPLEXITY_LABELS: { 'petit': 'Small (1-2 days)', 'moyen': 'Medium (3-5 days)', 'gros': 'Large (8-15 days)', 'sur-mesure': 'Custom' },
+      DEADLINE_LABELS: { '1sem': 'Urgent (1 week)', '2sem': '2 weeks', '1mois': '1 month', 'flexible': 'No rush' },
+      DETAIL_OPTIONS: {
+        '3d': [
+          { value: 'images', title: 'Images / Renders', desc: 'Photorealistic visuals of your products, buildings or scenes' },
+          { value: 'animation', title: 'Animation / Video', desc: 'Camera movements, animated objects, presentation video' },
+          { value: 'modelisation', title: '3D Modeling', desc: 'Creating objects, characters or environments in 3D' },
+          { value: 'produit', title: 'Product visuals', desc: 'Images for your website, catalog or advertising' },
+          { value: 'archi', title: 'Architecture / Interior', desc: 'Building, room and space visualization' },
+          { value: 'complet', title: 'Full project (all included)', desc: 'I handle everything, from creation to final delivery' }
+        ],
+        'industrie': [
+          { value: 'reconstruction', title: 'Site reconstruction', desc: 'Your factory, workshop or building recreated in 3D' },
+          { value: 'formation', title: 'Training material', desc: '3D model for training your teams' },
+          { value: 'planification', title: 'Work planning', desc: 'Visualize changes before making them' },
+          { value: 'visite', title: 'Virtual tour', desc: 'Navigate through your site in 3D' },
+          { value: 'documentation', title: 'Technical documentation', desc: '3D annotated plans, sections and views' },
+          { value: 'complet-indus', title: 'Full project', desc: 'Reconstruction + training + documentation' }
+        ],
+        'auto': [
+          { value: 'connexion', title: 'Connect your tools', desc: 'Your software communicates automatically with each other' },
+          { value: 'repetitif', title: 'Remove repetitive tasks', desc: 'Tasks you do every day, let a bot handle them' },
+          { value: 'surveillance', title: 'Automatic monitoring', desc: 'Your systems monitored 24/7, alerted if problems arise' },
+          { value: 'ia-assistant', title: 'Custom AI assistant', desc: 'An intelligent assistant tailored to your specific needs' },
+          { value: 'donnees', title: 'Data processing', desc: 'Collect, sort and analyze your data automatically' },
+          { value: 'complet-auto', title: 'Full system', desc: 'End-to-end automation, everything connected' }
+        ]
+      },
+      step1Cards: {
+        '3d': { title: '3D Visuals', desc: 'Images, animations, product renders, architecture, 3D videos', price: 'From \u20ac400/day' },
+        'industrie': { title: '3D Industrial Model', desc: '3D site reconstruction for visualization, planning and team training', price: 'From \u20ac450/day' },
+        'auto': { title: 'Automation & AI', desc: 'Connect your tools, remove repetitive tasks, save time', price: 'From \u20ac450/day' }
+      },
+      step3Cards: {
+        'petit': { title: 'Small', desc: 'A precise, well-defined need', price: '1 to 2 days' },
+        'moyen': { title: 'Medium', desc: 'Multiple elements, some back-and-forth', price: '3 to 5 days' },
+        'gros': { title: 'Large project', desc: 'Full project with multiple deliverables', price: '8 to 15 days' },
+        'sur-mesure': { title: 'Custom', desc: 'Let\'s discuss, I\'ll send you a personalized estimate', price: 'Custom quote' }
+      },
+      step4Cards: {
+        '1sem': { title: 'Urgent (1 week)', desc: 'I need it very soon', price: 'Urgency surcharge +50%' },
+        '2sem': { title: '2 weeks', desc: 'Tight but doable', price: 'Surcharge +20%' },
+        '1mois': { title: '1 month', desc: 'Comfortable timeline', price: 'Standard rate' },
+        'flexible': { title: 'No rush', desc: 'No time constraint', price: '-10% discount' }
+      },
+      buttons: { next: 'Next', back: 'Back', pdf: 'Download PDF quote', email: 'Send by email' },
+      footer: '\u00a9 2026 Arthur C. All rights reserved.'
+    };
+
+    var LANG_FR = {
+      TYPE_LABELS: TYPE_LABELS,
+      COMPLEXITY_LABELS: COMPLEXITY_LABELS,
+      DEADLINE_LABELS: DEADLINE_LABELS,
+      step1Cards: {
+        '3d': { title: 'Visuels 3D', desc: 'Images, animations, rendus de produits, architecture, vid\u00e9os 3D', price: '\u00c0 partir de 400 \u20ac/jour' },
+        'industrie': { title: 'Maquette 3D Industrielle', desc: 'Reconstruction de sites en 3D pour visualiser, planifier et former vos \u00e9quipes', price: '\u00c0 partir de 450 \u20ac/jour' },
+        'auto': { title: 'Automatisation & IA', desc: 'Connecter vos outils entre eux, supprimer les t\u00e2ches r\u00e9p\u00e9titives, gagner du temps', price: '\u00c0 partir de 450 \u20ac/jour' }
+      },
+      step3Cards: {
+        'petit': { title: 'Petit', desc: 'Un besoin pr\u00e9cis, bien d\u00e9fini', price: '1 \u00e0 2 jours' },
+        'moyen': { title: 'Moyen', desc: 'Plusieurs \u00e9l\u00e9ments, quelques aller-retours', price: '3 \u00e0 5 jours' },
+        'gros': { title: 'Gros projet', desc: 'Projet complet avec plusieurs livrables', price: '8 \u00e0 15 jours' },
+        'sur-mesure': { title: 'Sur-mesure', desc: 'On en discute, je vous fais une estimation personnalis\u00e9e', price: 'Devis personnalis\u00e9' }
+      },
+      step4Cards: {
+        '1sem': { title: 'Urgent (1 semaine)', desc: 'J\'en ai besoin tr\u00e8s vite', price: 'Majoration urgence +50%' },
+        '2sem': { title: '2 semaines', desc: 'D\u00e9lai serr\u00e9 mais faisable', price: 'Majoration +20%' },
+        '1mois': { title: '1 mois', desc: 'D\u00e9lai confortable', price: 'Tarif normal' },
+        'flexible': { title: 'Pas press\u00e9', desc: 'Pas de contrainte de temps', price: '-10% sur le tarif' }
+      },
+      buttons: { next: 'Suivant', back: 'Retour', pdf: 'T\u00e9l\u00e9charger le devis PDF', email: 'Envoyer par email' },
+      footer: '\u00a9 2026 Arthur C. Tous droits r\u00e9serv\u00e9s.'
+    };
+
+    var currentDevisLang = localStorage.getItem('portfolio-lang') || 'fr';
+
+    function setDevisLang(lang) {
+      currentDevisLang = lang;
+      localStorage.setItem('portfolio-lang', lang);
+      document.documentElement.setAttribute('data-lang', lang);
+      var btn = document.getElementById('langToggleDevis');
+      if (btn) btn.textContent = lang === 'fr' ? 'EN' : 'FR';
+
+      // Translate data-fr/data-en elements
+      document.querySelectorAll('[data-fr][data-en]').forEach(function(el) {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      // Translate placeholders
+      document.querySelectorAll('[data-' + lang + '-placeholder]').forEach(function(el) {
+        el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
+      });
+
+      var tr = lang === 'en' ? LANG_EN : LANG_FR;
+
+      // Update step 1 cards
+      document.querySelectorAll('#typeOptions .option-card').forEach(function(card) {
+        var val = card.dataset.value;
+        var d = tr.step1Cards[val];
+        if (d) {
+          card.querySelector('.option-title').textContent = d.title;
+          card.querySelector('.option-desc').textContent = d.desc;
+          card.querySelector('.option-price').textContent = d.price;
+        }
+      });
+
+      // Update step 3 cards
+      document.querySelectorAll('#complexityOptions .option-card').forEach(function(card) {
+        var val = card.dataset.value;
+        var d = tr.step3Cards[val];
+        if (d) {
+          card.querySelector('.option-title').textContent = d.title;
+          card.querySelector('.option-desc').textContent = d.desc;
+          card.querySelector('.option-price').textContent = d.price;
+        }
+      });
+
+      // Update step 4 cards
+      document.querySelectorAll('#deadlineOptions .option-card').forEach(function(card) {
+        var val = card.dataset.value;
+        var d = tr.step4Cards[val];
+        if (d) {
+          card.querySelector('.option-title').textContent = d.title;
+          card.querySelector('.option-desc').textContent = d.desc;
+          card.querySelector('.option-price').textContent = d.price;
+        }
+      });
+
+      // Update step 2 if populated
+      if (state.type) populateDetails();
+
+      // Update buttons
+      document.querySelectorAll('.btn-primary svg').forEach(function(svg) {
+        var btn2 = svg.parentElement;
+        if (btn2.textContent.trim().replace(/\s+/g,' ').indexOf('Suivant') > -1 || btn2.textContent.trim().replace(/\s+/g,' ').indexOf('Next') > -1) {
+          btn2.childNodes[0].textContent = tr.buttons.next + ' ';
+        }
+      });
+      document.querySelectorAll('.btn-ghost svg').forEach(function(svg) {
+        var btn2 = svg.parentElement;
+        var txt = btn2.textContent.trim();
+        if (txt.indexOf('Retour au') === -1 && txt.indexOf('Back to') === -1) {
+          // This is a step "Retour"/"Back" button - text is after svg
+          var nodes = btn2.childNodes;
+          for (var i = 0; i < nodes.length; i++) {
+            if (nodes[i].nodeType === 3 && nodes[i].textContent.trim().length > 0) {
+              nodes[i].textContent = '\n            ' + tr.buttons.back + '\n          ';
+              break;
+            }
+          }
+        }
+      });
+
+      // Footer
+      var footerP = document.querySelector('.footer p');
+      if (footerP) footerP.textContent = tr.footer;
+
+      // Title
+      document.title = lang === 'en' ? 'Free quote | Arthur C.' : 'Mon devis gratuit | Arthur C.';
+
+      // Update labels used in price/recap
+      if (lang === 'en') {
+        TYPE_LABELS['3d'] = 'Visuals 3D'; TYPE_LABELS['industrie'] = '3D Industrial Model'; TYPE_LABELS['auto'] = 'Automation & AI';
+        COMPLEXITY_LABELS['petit'] = 'Small (1-2 days)'; COMPLEXITY_LABELS['moyen'] = 'Medium (3-5 days)'; COMPLEXITY_LABELS['gros'] = 'Large (8-15 days)'; COMPLEXITY_LABELS['sur-mesure'] = 'Custom';
+        DEADLINE_LABELS['1sem'] = 'Urgent (1 week)'; DEADLINE_LABELS['2sem'] = '2 weeks'; DEADLINE_LABELS['1mois'] = '1 month'; DEADLINE_LABELS['flexible'] = 'No rush';
+      } else {
+        TYPE_LABELS['3d'] = 'Visuels 3D'; TYPE_LABELS['industrie'] = 'Maquette 3D Industrielle'; TYPE_LABELS['auto'] = 'Automatisation & IA';
+        COMPLEXITY_LABELS['petit'] = 'Petit (1-2 jours)'; COMPLEXITY_LABELS['moyen'] = 'Moyen (3-5 jours)'; COMPLEXITY_LABELS['gros'] = 'Gros projet (8-15 jours)'; COMPLEXITY_LABELS['sur-mesure'] = 'Sur-mesure';
+        DEADLINE_LABELS['1sem'] = 'Urgent (1 semaine)'; DEADLINE_LABELS['2sem'] = '2 semaines'; DEADLINE_LABELS['1mois'] = '1 mois'; DEADLINE_LABELS['flexible'] = 'Pas press\u00e9';
+      }
+    }
+
+    // Also update populateDetails to respect language
+    var _origPopulateDetails = populateDetails;
+    populateDetails = function() {
+      var container = document.getElementById('detailOptions');
+      var lang = currentDevisLang;
+      var opts = lang === 'en' && LANG_EN.DETAIL_OPTIONS[state.type] ? LANG_EN.DETAIL_OPTIONS[state.type] : DETAIL_OPTIONS[state.type] || [];
+      container.innerHTML = opts.map(function(o) {
+        return '<div class="option-card ' + (state.details.includes(o.value) ? 'selected' : '') + '" data-value="' + o.value + '" onclick="toggleDetail(this)">' +
+          '<div class="check-indicator"></div>' +
+          '<div class="option-title">' + o.title + '</div>' +
+          '<div class="option-desc">' + o.desc + '</div>' +
+        '</div>';
+      }).join('');
+      updateBtn2();
+    };
+
+    // Init language on load
+    document.getElementById('langToggleDevis').addEventListener('click', function() {
+      setDevisLang(currentDevisLang === 'fr' ? 'en' : 'fr');
+    });
+    if (currentDevisLang !== 'fr') setDevisLang(currentDevisLang);
   </script>
 </body>
 </html>
