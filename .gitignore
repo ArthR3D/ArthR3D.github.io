@@ -1,0 +1,65 @@
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Node (si build futur)
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-error.log*
+
+# Build
+dist/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+
+# Env / secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.orig
+*.log
+
+# Assets sources (fichiers lourds 3D/video)
+*.blend
+*.blend1
+*.max
+*.fbx
+*.obj
+*.c4d
+*.hip
+*.psd
+*.ai
+*.indd
+*.aep
+*.prproj
+*.mov
+*.mp4
+*.avi
+*.mkv
+*.zip
+*.rar
+*.7z
+
+# Sass/Less cache
+.sass-cache/
+*.css.map
